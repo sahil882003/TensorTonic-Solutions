@@ -5,5 +5,5 @@ def norm_gate(X, W, threshold):
     x = np.array(X,dtype = float)
     w = np.array(W,dtype = float)
     matrix_mul = x @ w
-    l2_norm = np.sqrt(np.sum(matrix_mul ** 2,axis = 1))
+    l2_norm = np.linalg.norm(matrix_mul,axis = 1)
     return matrix_mul * (l2_norm >= threshold).astype(float).reshape(-1,1)
