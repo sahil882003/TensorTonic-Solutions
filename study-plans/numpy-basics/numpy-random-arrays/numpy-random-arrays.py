@@ -7,6 +7,6 @@ def generate_random_array(shape, kind, seed):
     rng = np.random.default_rng(seed)
     
     if kind == "uniform":
-        return rng.uniform(size = shape)
+        return rng.uniform(size = shape).astype("float64")
     else:
-        return rng.normal(size = shape)
+        return rng.normal(size = shape).astype("float64")
