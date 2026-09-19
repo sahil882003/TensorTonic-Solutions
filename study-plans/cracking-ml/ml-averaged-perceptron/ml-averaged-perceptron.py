@@ -32,8 +32,6 @@ def averaged_perceptron(X: list, y: list, lr: float, epochs: int) -> dict:
     average_weights = average_weights/count
     average_bias = average_bias/count 
 
-    print(count)
-
     predictions = data @ average_weights[:None] + average_bias
     predictions = np.where(predictions > 0,1,-1)
 
